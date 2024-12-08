@@ -45,3 +45,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         vim.highlight.on_yank()
     end,
 })
+
+-- duplicate a line and comment out the first line
+vim.keymap.set("n", "yc", "yy<cmd>normal gcc<CR>p")
