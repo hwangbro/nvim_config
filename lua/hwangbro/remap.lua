@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 
-vim.keymap.set("n", "<C-_>", "<cmd>normal gcc<CR>")
+vim.keymap.set({ "n", "v" }, "<C-_>", "<cmd>normal gcc<CR>")
 
 -- format json
 vim.keymap.set("n", "<leader>fj", "<cmd>%!jq .<CR>")
