@@ -55,9 +55,9 @@ return {
                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
 
                 -- more traditional mapping
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
-                ["<Tab>"] = cmp.mapping.select_next_item(),
-                ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+                -- ["<CR>"] = cmp.mapping.confirm({ select = true }),
+                -- ["<Tab>"] = cmp.mapping.select_next_item(),
+                -- ["<S-Tab>"] = cmp.mapping.select_prev_item(),
 
                 -- manuallly trigger a completion from nvim-cmp
                 ["<C-Space>"] = cmp.mapping.complete({}),

@@ -33,11 +33,16 @@ return {
         formatters_by_ft = {
             python = { "black" },
             c_sharp = { "csharpier" },
+            cs = { "csharpier" },
         },
         formatters = {
             stylua = {
                 prepend_args = { "indent_type", "Spaces" },
             },
+            csharpier = {
+                command = "dotnet-csharpier",
+                args = { "--write-stdout" },
+            }
         },
     },
 }
