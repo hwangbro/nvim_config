@@ -5,15 +5,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
     desc = "LSP actions",
     callback = function(event)
         local map = function(keys, func, desc, mode)
-            mode = mode or 'n'
-            vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+            mode = mode or "n"
+            vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
 
-        map("gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "[G]oto [D]efinition")
-        map("gr", "<cmd>lua vim.lsp.buf.references()<cr>", "[G]oto [R]eference")
+        -- map("gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "[G]oto [D]efinition")
+        -- map("gr", "<cmd>lua vim.lsp.buf.references()<cr>", "[G]oto [R]eference")
         map("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", "[R]e[n]ame")
-    end
-
+    end,
 })
 
 -- copied straight from blink
@@ -35,5 +34,5 @@ vim.lsp.config("*", {
 })
 
 -- enable lsps
-vim.lsp.enable({ 'basedpyright', 'lua_ls' })
+vim.lsp.enable({ "basedpyright", "lua_ls" })
 -- vim.lsp.enable({ "csharp_ls "})
