@@ -9,9 +9,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
 
-        -- map("gd", "<cmd>lua vim.lsp.buf.definition()<cr>", "[G]oto [D]efinition")
-        -- map("gr", "<cmd>lua vim.lsp.buf.references()<cr>", "[G]oto [R]eference")
         map("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", "[R]e[n]ame")
+        map("<leader>vd", "<cmd>lua vim.diagnostic.open_float()<cr>", "[V]im [D]iagnostic")
 
         local function client_supports_method(client, method, bufnr)
             if vim.fn.has("nvim-0.11") == 1 then
@@ -69,5 +68,5 @@ vim.lsp.config("*", {
 })
 
 -- enable lsps
-vim.lsp.enable({ "basedpyright", "lua_ls" })
+vim.lsp.enable({ "basedpyright", "lua_ls", "roslyn_ls" })
 -- vim.lsp.enable({ "csharp_ls "})
