@@ -31,6 +31,7 @@ return {
             function()
                 Snacks.picker.lsp_references()
             end,
+            nowait = true,
             desc = "[G]oto [R]eferences",
         },
     },
