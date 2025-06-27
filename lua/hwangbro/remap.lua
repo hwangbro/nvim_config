@@ -9,7 +9,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
@@ -35,6 +34,9 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
 
+vim.keymap.set("n", "<leader>ca", function()
+    require("tiny-code-action").code_action()
+end, { noremap = true, silent = true })
 
 -- disable arrow keys in normal mode
 vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
@@ -43,9 +45,9 @@ vim.keymap.set("n", "<up>", '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set("n", "<down>", '<cmd>echo "Use j to move!!"<CR>')
 
 -- highlight when yanking
-vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking text',
-    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+vim.api.nvim_create_autocmd("TextYankPost", {
+    desc = "Highlight when yanking text",
+    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
     callback = function()
         vim.highlight.on_yank()
     end,
