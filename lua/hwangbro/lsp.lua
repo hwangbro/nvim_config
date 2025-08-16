@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
         map("<leader>rn", "<cmd>lua vim.lsp.buf.rename()<cr>", "[R]e[n]ame")
         map("<leader>vd", "<cmd>lua vim.diagnostic.open_float()<cr>", "[V]im [D]iagnostic")
+        -- map("<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", "[C]ode [A]ction")
 
         local function client_supports_method(client, method, bufnr)
             if vim.fn.has("nvim-0.11") == 1 then
@@ -91,5 +92,5 @@ vim.lsp.config("*", {
 })
 
 -- enable lsps
-vim.lsp.enable({ "basedpyright", "lua_ls", "roslyn_ls" })
+vim.lsp.enable({ "basedpyright", "lua_ls", "roslyn_ls", "gopls" })
 -- vim.lsp.enable({ "csharp_ls "})
