@@ -23,9 +23,9 @@ return {
         },
         formatters_by_ft = {
             lua = { "stylua" },
-            python = { "black" },
-            c_sharp = { "csharpier" },
+            python = { "ruff_format" },
             cs = { "csharpier" },
+            go = { "gofmt" },
         },
         formatters = {
             stylua = {
