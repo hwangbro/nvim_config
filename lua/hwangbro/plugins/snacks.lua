@@ -34,5 +34,12 @@ return {
             nowait = true,
             desc = "[G]oto [R]eferences",
         },
+        {
+            "gI",
+            function()
+                Snacks.picker.lsp_implementations()
+            end,
+            desc = "[G]oto [I]mplementations",
+        },
     },
 }
