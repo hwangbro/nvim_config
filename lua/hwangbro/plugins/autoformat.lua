@@ -26,6 +26,9 @@ return {
             python = { "ruff_format" },
             cs = { "csharpier" },
             go = { "gofmt" },
+            html = { "html_beautify" },
+            javascript = { "js_beautify" },
+            css = { "css_bueatify" },
         },
         formatters = {
             stylua = {
