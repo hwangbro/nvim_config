@@ -1,9 +1,19 @@
 return {
     "folke/snacks.nvim",
+    lazy = false,
+    ---@type snacks.Config
     opts = {
         picker = {},
+        explorer = { enabled = true },
     },
     keys = {
+        {
+            "<leader>e",
+            function()
+                Snacks.explorer()
+            end,
+            desc = "File Explorer",
+        },
         {
             "<leader>sf",
             function()
