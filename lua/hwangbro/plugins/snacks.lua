@@ -3,7 +3,17 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
-        picker = {},
+        picker = {
+            sources = {
+                explorer = {
+                    layout = {
+                        layout = {
+                            position = "right",
+                        },
+                    },
+                },
+            },
+        },
         explorer = { enabled = true },
     },
     keys = {
